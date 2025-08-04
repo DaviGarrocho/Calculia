@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barra de XP Funcional</title>
+  <style>
+    /* Container geral da barra de XP */
+    .xp-container {
+      width: 300px;           /* largura fixa */
+      height: 25px;           /* altura fixa */
+      background: #ddd;       /* cor de fundo da "trilha" */
+      border-radius: 5px;     /* cantos arredondados */
+      overflow: hidden;       /* importante para não vazar a barra interna */
+      margin-bottom: 10px;    /* espaço abaixo */
+    }
+
+    /* A própria barra que cresce conforme XP */
+    .xp-bar {
+      height: 100%;           /* sempre ocupa toda a altura do container */
+      width: 0%;              /* começa em 0% de preenchimento */
+      background: linear-gradient(to right, #4caf50, #81c784);
+      transition: width 0.5s ease-in-out; /* animação suave ao mudar a largura */
+    }
+
+    /* Texto de status */
+    #status {
+      font-family: Arial, sans-serif;
+      margin-bottom: 15px;
+    }
+
+    /* Botão de teste */
+    button {
+      padding: 8px 12px;
+      font-size: 14px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Container da barra de XP -->
+  <div class="xp-container">
+    <div class="xp-bar" id="xp-bar"></div>
+  </div>
+
+  <!-- Texto mostrando nível atual e XP -->
+  <div id="status">
+    <p>Nível: <span id="level">1</span></p>
+    <p>XP: <span id="xp-text">0 / 100</span></p>
+  </div>
+
+  <!-- Botões para testar ganho de XP -->
+  <button onclick="ganharXP(30)">Ganhar 30 XP</button>
+  <button onclick="ganharXP(75)">Ganhar 75 XP</button>
+
+  <script>
+    // === Variáveis de estado ===
+    let xpAtual = 0;         // XP que o jogador já acumulou no nível atual
+    let xpNecessario = 100;  // XP necessário para chegar ao próximo nível
+    let nivel = 1;           // Nível atual do jogador
+
+    /**
+     * Atualiza barra, textos e níveis na tela.
+     */
+    function atualizarBarra() {
+      // calcula a porcentagem de preenchimento (0 a 100)
+      const porcentagem = (xpAtual / xpNecessario) * 100;
+      // ajusta a largura da barra (%)
+      document.getElementById("xp-bar").style.width = `${porcentagem}%`;
+      // atualiza texto de XP e nível
+      document.getElementById("xp-text").innerText = `${xpAtual} / ${xpNecessario}`;
+      document.getElementById("level").innerText = nivel;
+    }
+
+    /**
+     * Adiciona XP ao jogador, lida com múltiplos níveis de uma vez
+     * e mantém o "excesso" de XP para o próximo nível.
+     * @param {number} xpGanho - Quantos pontos de XP ganhar
+     */
+    function ganharXP(xpGanho) {
+      // soma o XP ganho ao XP atual
+      xpAtual += xpGanho;
+
+      // enquanto o XP atual for igual ou maior que o necessário, sobe de nível
+      while (xpAtual >= xpNecessario) {
+        xpAtual -= xpNecessario;              // remove o XP que foi usado para upar
+        nivel++;                              // incrementa o nível
+        xpNecessario = Math.floor(xpNecessario * 1.2); 
+        // aumenta em 20% o XP necessário para o próximo nível (arredonda pra baixo)
+      }
+
+      // atualiza a interface após o cálculo
+      atualizarBarra();
+    }
+
+    // Inicializa a barra ao carregar a página
+    window.onload = atualizarBarra;
+  </script>
+</body>
+</html>

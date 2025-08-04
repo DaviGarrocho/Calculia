@@ -1,20 +1,88 @@
-html,body{
-    padding: 0px;
-    margin: 0px;
-    height: 100vh;
-    overflow: hidden;
+:root{
+    --amrpri: #FAA929;
+    --azlseg: #1A659E;
+    --vererr: #A62639;
+    --vedexa: #04E762;
+    --cinneu: #88958D;
 }
 
+html,body{
+    background-color: #0c2f49;
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+    
+    
+    
+}
+
+
 header{
-    background-color: blueviolet;
-    height: 10vh;
+    background-color: var(--azlseg);
+    height: 10.6vh;
+    margin-bottom: 3em;
 }
+
 main{
-    background-color: black;
-    width: 100px;
-    height: 100px;
-    margin: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row nowrap;
+    height: auto;
+    width: auto;
+    
+}div.g{
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    flex-flow: column nowrap;
+    border: var(--cinneu) solid 1px;
+    margin-right: 25px;
+    margin-left: 25px;
+    width: 23em;
+    height: 35em;
+    
+    transition: 100ms ease;
+    background-color: white;  
+}div.conteudo{
+    
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background-color: var(--amrpri);
+    font-family: 'Jersey 15';
+    color: rgb(0, 0, 0);
+    text-align: center;
+}div.imagem{  
+    background-color: var(--amrpri);
 }
+.conteudo p{
+    font-weight: lighter;
+    text-align: center;
+    margin: 10px;
+    font-size: 1.4em;
+}
+
+div.g:hover{
+    transform: scale(1.1);
+
+    transition: 100ms ease;
+}
+
 footer{
-    padding-top: 70vh;
+    color: white;
+    text-align: center;
+    margin-top: 4cap;
+}
+
+@media (max-width: 1117px) {
+main{
+    flex-flow: column nowrap;
+}
+div.g{
+   margin: 1em;
+}
+header{
+    margin-bottom: 5em;
+}
 }
