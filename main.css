@@ -5,24 +5,24 @@
     --vedexa: #04E762;
     --cinneu: #88958D;
 }
-
 html,body{
     background-color: #0c2f49;
     padding: 0px;
     margin: 0px;
     height: 100%;
-    
-    
-    
 }
-
-
 header{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
     background-color: var(--azlseg);
     height: 10.6vh;
     margin-bottom: 3em;
+}header img{
+    height: 50%;
+    filter: brightness(0);
+    margin-left: 1.5em;
 }
-
 main{
     display: flex;
     justify-content: center;
@@ -30,22 +30,20 @@ main{
     flex-flow: row nowrap;
     height: auto;
     width: auto;
-    
-}div.g{
+}
+div.g{
     display: flex;
     align-items: center;
     overflow: hidden;
     flex-flow: column nowrap;
-    border: var(--cinneu) solid 1px;
+    border-radius: 5px;
     margin-right: 25px;
     margin-left: 25px;
     width: 23em;
     height: 35em;
-    
     transition: 100ms ease;
     background-color: white;  
 }div.conteudo{
-    
     width: 100%;
     height: 100%;
     box-sizing: border-box;
@@ -55,6 +53,7 @@ main{
     text-align: center;
 }div.imagem{  
     background-color: var(--amrpri);
+    image-rendering: pixelated;
 }
 .conteudo p{
     font-weight: lighter;
@@ -62,19 +61,15 @@ main{
     margin: 10px;
     font-size: 1.4em;
 }
-
 div.g:hover{
     transform: scale(1.1);
-
     transition: 100ms ease;
 }
-
 footer{
     color: white;
     text-align: center;
     margin-top: 4cap;
 }
-
 @media (max-width: 1117px) {
 main{
     flex-flow: column nowrap;
@@ -85,4 +80,5 @@ div.g{
 header{
     margin-bottom: 5em;
 }
+
 }
