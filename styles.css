@@ -5,23 +5,57 @@
     --vedexa: #04E762;
     --cinneu: #88958D;
 }
+@keyframes rodar{
+    0%   { transform:  rotate(0deg)}
+    100% { transform:  rotate(360deg)}
+}
+@keyframes flutuar{
+    0%   { transform: translate(-50%, 0px); }
+    50%  { transform: translate(-50%, 3px); }
+    100% { transform: translate(-50%, 0px); }
+}
+@font-face {
+    font-family: 'Jersey';
+    src: url(assets/fonts/Jersey15-Regular.ttf);
+}
 html,body{
     background-color: #0c2f49;
     padding: 0px;
     margin: 0px;
     height: 100%;
+    font-family: 'Jersey', Courier New, Courier, monospace;
 }
 header{
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
+    justify-content: space-between;
     background-color: var(--azlseg);
+    box-shadow: rgba(0, 0, 0, 0.808) 0px 3px 10px;;
     height: 10.6vh;
     margin-bottom: 3em;
 }header img{
-    height: 50%;
-    filter: brightness(0);
     margin-left: 1.5em;
+    
+}
+#config{
+    margin-right: 2em;
+    image-rendering: pixelated;
+    transition: 50ms;
+}
+#config:hover{
+    image-rendering: pixelated;
+    transition: 50ms;
+    transform: scale(0.95);
+}
+header h1{
+    animation: flutuar 3s infinite;
+    color: var(--amrpri);
+    font-size: 5em;
+    position: absolute;
+    left: 50%;
+    
+    text-shadow: rgba(0, 0, 0, 0.719) 5px 4px 5px;
 }
 main{
     display: flex;
@@ -36,19 +70,21 @@ div.g{
     align-items: center;
     overflow: hidden;
     flex-flow: column nowrap;
+    border: black solid 4px;
     border-radius: 5px;
+    box-shadow: black 3px 3px 6px;
     margin-right: 25px;
     margin-left: 25px;
     width: 23em;
     height: 35em;
     transition: 100ms ease;
-    background-color: white;  
+    background-color: white;
 }div.conteudo{
     width: 100%;
     height: 100%;
     box-sizing: border-box;
     background-color: var(--amrpri);
-    font-family: 'Jersey 15';
+    font-family: 'Jersey', Courier New, Courier, monospace;
     color: rgb(0, 0, 0);
     text-align: center;
 }div.imagem{  
@@ -80,5 +116,4 @@ div.g{
 header{
     margin-bottom: 5em;
 }
-
 }
