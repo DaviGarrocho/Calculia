@@ -5,9 +5,10 @@
     --vedexa: #04E762;
     --cinneu: #88958D;
 }
-@keyframes rodar{
-    0%   { transform:  rotate(0deg)}
-    100% { transform:  rotate(360deg)}
+@keyframes flutuar2{
+    0%   { transform: translateY(0px); }
+    50%  { transform: translateY(3px); }
+    100% { transform: translateY(0px); }
 }
 @keyframes flutuar{
     0%   { transform: translate(-50%, 0px); }
@@ -52,10 +53,17 @@ header h1{
     animation: flutuar 3s infinite;
     color: var(--amrpri);
     font-size: 5em;
+    transform: translate(-50%);
     position: absolute;
     left: 50%;
-    
     text-shadow: rgba(0, 0, 0, 0.719) 5px 4px 5px;
+}
+.titulo h1{
+    animation: flutuar2 3s infinite;
+    font-size: 5em;
+    color: var(--amrpri);
+    text-shadow: rgba(0, 0, 0, 0.719) 5px 4px 5px;
+    display: none;
 }
 main{
     display: flex;
@@ -114,6 +122,17 @@ div.g{
    margin: 1em;
 }
 header{
-    margin-bottom: 5em;
+    margin-bottom: 1px;
+}
+
+@media (max-width: 613px) {
+.titulo h1{
+    display: block;
+    margin: 1px; 
+}
+header h1{
+    display: none;
+}
+    
 }
 }
