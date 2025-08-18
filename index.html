@@ -5,135 +5,148 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculia</title>
     <link rel="stylesheet" href="styles.css">
-
 </head>
 <body>
     <header>
-        <div class="inicio"> <img src="assets/logo da faetec.png" alt=""></div>  
+        <div class="logo-inicio">
+            <img src="assets/logo da faetec.png" alt="Logo FAETEC">
+        </div>  
         <h1>CALCULIA</h1>
-        <div id="config"><img src="assets/config.png" alt=""></div>
+        <div id="botao-configuracoes">
+            <img src="assets/config.png" alt="Configurações">
+        </div>
     </header>
+
     <main>
-        <div class="titulo"><h1>CALCULIA</h1></div>
-        <div class="g" data-modal="modal-classico">
-            <div class="imagem">
-                <img src="assets/Classico.png" alt="">
+        <div class="titulo-principal">
+            <h1>CALCULIA</h1>
+        </div>
+
+        <div class="modo-jogo" data-modal="modal-classico">
+            <div class="imagem-modo">
+                <img src="assets/Classico.png" alt="Modo Clássico">
             </div>
-            <div class="conteudo">
+            <div class="conteudo-modo">
                 <h1>MODO CLÁSSICO</h1>
-                <p>No modo clássico você responderá um certo numero de contas o mais rapido e preciso possivel, ao termino você recebera quantas contas você fez por minuto e ira ganhar xp dependendo de quanto você acertou o mais rapido possivel.</p>
+                <p>No modo clássico você responderá um certo número de contas o mais rápido e preciso possível, ao término você receberá quantas contas você fez por minuto e irá ganhar XP dependendo de quanto você acertou o mais rápido possível.</p>
             </div>
         </div>
-        <div class="g" data-modal="modal-infinito">
-            <div class="imagem">
-                <img src="assets/relogio.png" alt="">
+
+        <div class="modo-jogo" data-modal="modal-infinito">
+            <div class="imagem-modo">
+                <img src="assets/relogio.png" alt="Modo Infinito">
             </div>
-            <div class="conteudo">
+            <div class="conteudo-modo">
                 <h1>MODO INFINITO</h1>
-                <p>No modo infinito você terá um tempo limite pra resolver diversas contas, quanto mais você acertar mais você ganhará tempo extra pra continuar resolvendo contas que ficam cada vez mais difícies.</p>
+                <p>No modo infinito você terá um tempo limite para resolver diversas contas, quanto mais você acertar mais você ganhará tempo extra para continuar resolvendo contas que ficam cada vez mais difíceis.</p>
             </div>
         </div>
-        <div class="g" data-modal="modal-contra">
-            <div class="imagem">
-                <img src="assets/espada.png" alt="">
+
+        <div class="modo-jogo" data-modal="modal-contra">
+            <div class="imagem-modo">
+                <img src="assets/espada.png" alt="Modo Contra">
             </div>
-            <div class="conteudo">
+            <div class="conteudo-modo">
                 <h1>MODO CONTRA</h1>
-                <p>Você jogará contra um outro player apostando não so suas moedas mas na sua capacidade de calcular, quem completar quem for mais rapido e preciso ganha.</p>
+                <p>Você jogará contra outro player apostando não só suas moedas mas na sua capacidade de calcular, quem completar mais rápido e preciso ganha.</p>
             </div>
         </div>
     </main>
+
     <footer>
-        <div class="conteudo-footer">
+        <div class="conteudo-rodape">
             <p>&copy; 2025 Calculia. Todos os direitos reservados a DaviGs</p>
         </div>
     </footer>
 
-    <div id="modal-classico" class="modal-overlay">
-        <div class="modal-content">
-           <div class="im" id="c">
-            <h1 class="texto">MODO CLÁSSICO</h1>
-            <p class="tx">No modo clássico você responderá um certo numero de contas o mais rapido e preciso possivel, ao termino você recebera quantas contas você fez por minuto e ira ganhar xp dependendo de quanto você acertou o mais rapido possivel.</p>
-           </div>
-           <div class="con">
-            <div>
-                <img class="sair" src="assets/VOLTAR.png" alt="">
+    <div id="modal-classico" class="sobreposicao-modal">
+        <div class="conteudo-modal">
+            <div class="imagem-modal modo-classico">
+                <h1 class="titulo-modal">MODO CLÁSSICO</h1>
+                <p class="descricao-modal">No modo clássico você responderá um certo número de contas o mais rápido e preciso possível, ao término você receberá quantas contas você fez por minuto e irá ganhar XP dependendo de quanto você acertou o mais rápido possível.</p>
             </div>
-            <div>
-               <h1>Configurações do modo</h1> 
+            <div class="controles-modal">
+                <div>
+                    <img class="botao-voltar" src="assets/VOLTAR.png" alt="Voltar">
+                </div>
+                <div>
+                    <h1>Configurações do modo</h1> 
+                </div>
+                <div>
+                    <img class="botao-configuracoes-modal" src="assets/config.png" alt="Configurações">
+                </div>
             </div>
-            <div>
-                <img id="confi" src="assets/config.png" alt="">
-            </div>
-           </div>
         </div>
     </div>
 
-    <div id="modal-infinito" class="modal-overlay">
-        <div class="modal-content">
-            <div class="im" id="i">
-            <h1 class="texto">MODO INFINITO</h1>
-            <p class="tx">No modo infinito você terá um tempo limite pra resolver diversas contas, quanto mais você acertar mais você ganhará tempo extra pra continuar resolvendo contas que ficam cada vez mais difícies.</p>
-           </div>
-           <div class="con">
-            <div>
-                <img class="sair" src="assets/VOLTAR.png" alt="">
+    <div id="modal-infinito" class="sobreposicao-modal">
+        <div class="conteudo-modal">
+            <div class="imagem-modal modo-infinito">
+                <h1 class="titulo-modal">MODO INFINITO</h1>
+                <p class="descricao-modal">No modo infinito você terá um tempo limite para resolver diversas contas, quanto mais você acertar mais você ganhará tempo extra para continuar resolvendo contas que ficam cada vez mais difíceis.</p>
             </div>
-            <div>
-               <h1>Configurações do modo</h1> 
+            <div class="controles-modal">
+                <div>
+                    <img class="botao-voltar" src="assets/VOLTAR.png" alt="Voltar">
+                </div>
+                <div>
+                    <h1>Configurações do modo</h1> 
+                </div>
+                <div>
+                    <img class="botao-configuracoes-modal" src="assets/config.png" alt="Configurações">
+                </div>
             </div>
-            <div>
-                <img id="confi" src="assets/config.png" alt="">
-            </div>
-           </div>
-        </div>
-           </div>
         </div>
     </div>
 
-    <div id="modal-contra" class="modal-overlay">
-        <div class="modal-content">
-           <div class="im" id="co">
-            <h1 class="texto">MODO CONTRA</h1>
-            <p class="tx">Você jogará contra um outro player apostando não so suas moedas mas na sua capacidade de calcular, quem completar quem for mais rapido e preciso ganha.</p>
-           </div>
-           <div class="con">
-            <div>
-                <img class="sair" src="assets/VOLTAR.png" alt="">
+    <div id="modal-contra" class="sobreposicao-modal">
+        <div class="conteudo-modal">
+            <div class="imagem-modal modo-contra">
+                <h1 class="titulo-modal">MODO CONTRA</h1>
+                <p class="descricao-modal">Você jogará contra outro player apostando não só suas moedas mas na sua capacidade de calcular, quem completar mais rápido e preciso ganha.</p>
             </div>
-            <div>
-               <h1>Configurações do modo</h1> 
+            <div class="controles-modal">
+                <div>
+                    <img class="botao-voltar" src="assets/VOLTAR.png" alt="Voltar">
+                </div>
+                <div>
+                    <h1>Configurações do modo</h1> 
+                </div>
+                <div>
+                    <img class="botao-configuracoes-modal" src="assets/config.png" alt="Configurações">
+                </div>
             </div>
-            <div>
-                <img id="confi" src="assets/config.png" alt="">
-            </div>
-           </div>
-
         </div>
-           </div>
+    </div>
 
-           <div id="modal-config" class="modal-overlay">
-        <div class="modal-content">
-           <div class="im" id="co">
-            <h1 class="texto">MODO CONTRA</h1>
-            <p class="tx">Você jogará contra um outro player apostando não so suas moedas mas na sua capacidade de calcular, quem completar quem for mais rapido e preciso ganha.</p>
-           </div>
-           <div class="con">
-            <div>
-                <img class="sair" src="assets/VOLTAR.png" alt="">
+    <div id="modal-configuracoes" class="sobreposicao-modal">
+        <div class="conteudo-modal-configuracoes">
+            <div class="cabecalho-configuracoes">
+                <h1>CONFIGURAÇÕES</h1>
             </div>
-            <div>
-               <h1>Configurações do modo</h1> 
+            
+            <div class="opcoes-configuracoes">
+                <div class="opcao-som">
+                    <label for="volume-som">Volume dos Efeitos:</label>
+                    <input type="range" id="volume-som" min="0" max="100" value="50">
+                    <span id="valor-som">50%</span>
+                </div>
+                
+                <div class="opcao-musica">
+                    <label for="volume-musica">Volume da Música:</label>
+                    <input type="range" id="volume-musica" min="0" max="100" value="0">
+                    <span id="valor-musica">0%</span>
+                </div>
             </div>
-            <div>
-                <img id="confi" src="assets/config.png" alt="">
+            
+            <div class="botoes-configuracoes">
+                <button id="botao-continuar" class="botao-config">CONTINUAR</button>
+                <button id="botao-sair-jogo" class="botao-config botao-sair">SAIR DO JOGO</button>
             </div>
-           </div>
-
         </div>
-           </div>
-    
-
+    </div>
+    <audio id="menuMusic" src="assets/sound/Musiquinhaia.mp3" loop autoplay></audio>
     <script src="menu.js"></script>
 </body>
 </html>
+

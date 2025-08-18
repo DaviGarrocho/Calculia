@@ -1,73 +1,82 @@
-:root{
-    --amrpri: #FAA929;
-    --azlseg: #1A659E;
-    --vererr: #A62639;
-    --vedexa: #04E762;
-    --cinneu: #88958D;
+:root {
+    --cor-amarelo-primario: #FAA929;
+    --cor-azul-secundario: #1A659E;
+    --cor-vermelho-erro: #A62639;
+    --cor-verde-sucesso: #04E762;
+    --cor-cinza-neutro: #88958D;
+    --cor-fundo-principal: #0c2f49;
 }
-@keyframes flutuar2{
+
+@keyframes flutuar-vertical {
     0%   { transform: translateY(0px); }
     50%  { transform: translateY(3px); }
     100% { transform: translateY(0px); }
 }
-@keyframes flutuar{
+
+@keyframes flutuar-horizontal {
     0%   { transform: translate(-50%, 0px); }
     50%  { transform: translate(-50%, 3px); }
     100% { transform: translate(-50%, 0px); }
 }
+
 @font-face {
     font-family: 'Jersey';
     src: url(assets/fonts/Jersey15-Regular.ttf);
 }
-html,body{
-    background-color: #0c2f49;
-    padding: 0px;
-    margin: 0px;
+
+html, body {
+    background-color: var(--cor-fundo-principal);
+    padding: 0;
+    margin: 0;
     height: 100%;
-    font-family: 'Jersey', Courier New, Courier, monospace;
+    font-family: 'Jersey', 'Courier New', Courier, monospace;
 }
-header{
+
+header {
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
     justify-content: space-between;
-    background-color: var(--azlseg);
-    box-shadow: rgba(0, 0, 0, 0.808) 0px 3px 10px;;
+    background-color: var(--cor-azul-secundario);
+    box-shadow: rgba(0, 0, 0, 0.808) 0px 3px 10px;
     height: 10.6vh;
     margin-bottom: 3em;
-}header img{
-    margin-left: 1.5em;
-    
 }
-#config{
+
+header img {
+    margin-left: 1.5em;
+}
+
+#botao-configuracoes {
     margin-right: 2em;
     image-rendering: pixelated;
-    transition: 50ms;
+    transition: transform 50ms;
     cursor: pointer;
 }
-#config:hover{
-    image-rendering: pixelated;
-    transition: 50ms;
+
+#botao-configuracoes:hover {
     transform: scale(0.95);
-    cursor: pointer;
 }
-header h1{
-    animation: flutuar 3s infinite;
-    color: var(--amrpri);
+
+header h1 {
+    animation: flutuar-horizontal 3s infinite;
+    color: var(--cor-amarelo-primario);
     font-size: 5em;
     transform: translate(-50%);
     position: absolute;
     left: 50%;
     text-shadow: rgba(0, 0, 0, 0.719) 5px 4px 5px;
 }
-.titulo h1{
-    animation: flutuar2 3s infinite;
+
+.titulo-principal h1 {
+    animation: flutuar-vertical 3s infinite;
     font-size: 5em;
-    color: var(--amrpri);
+    color: var(--cor-amarelo-primario);
     text-shadow: rgba(0, 0, 0, 0.719) 5px 4px 5px;
     display: none;
 }
-main{
+
+main {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -75,7 +84,8 @@ main{
     height: auto;
     width: auto;
 }
-div.g{
+
+.modo-jogo {
     display: flex;
     align-items: center;
     overflow: hidden;
@@ -83,84 +93,41 @@ div.g{
     border: black solid 4px;
     border-radius: 5px;
     box-shadow: black 3px 3px 6px;
-    margin-right: 25px;
-    margin-left: 25px;
+    margin: 0 25px;
     width: 23em;
     height: 35em;
-    transition: 100ms ease;
+    transition: transform 100ms ease;
     background-color: white;
     cursor: pointer;
-}div.conteudo{
+}
+
+.modo-jogo:hover {
+    transform: scale(1.1);
+}
+
+.conteudo-modo {
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-    background-color: var(--amrpri);
-    font-family: 'Jersey', Courier New, Courier, monospace;
+    background-color: var(--cor-amarelo-primario);
+    font-family: 'Jersey', 'Courier New', Courier, monospace;
     color: rgb(0, 0, 0);
     text-align: center;
-}div.imagem{  
-    background-color: var(--amrpri);
+}
+
+.imagem-modo {  
+    background-color: var(--cor-amarelo-primario);
     image-rendering: pixelated;
 }
-.conteudo p{
+
+.conteudo-modo p {
     font-weight: lighter;
     text-align: center;
     margin: 10px;
     font-size: 1.4em;
 }
-div.g:hover{
-    transform: scale(1.1);
-    transition: 100ms ease;
-}
-.im{
-    background-color: black;
-    height: 50%;
-    background-position: center;
-    position: relative;
-    bottom: 33px;
-    color: white;
-    text-shadow: #1A659E 1px 1px 70px;
-}
-.con{
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: space-between;
-    background-color: var(--azlseg);
-    width: 100%;
-    height: 100%;
-    position: relative;
-    bottom: 33px;
-}.con h1{
-    position: relative;
-    font-size: 1.5em;
-    right: 6px;
-}
-#confi{
-margin-top: 5px;
-margin-right: 10px;
-width: 55px;
-cursor: pointer;
-}
-#confi:hover{
-    transform: scale(1.10);
-    cursor: pointer;
-}
-.sair:hover{
-    transform: scale(1.10);
-    cursor: pointer;
-}
-#c{background-image: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url(assets/Classico.png);}
-#i{background-image: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url(assets/relogio.png);} 
-#co{background-image: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url(assets/espada.png);} 
-.tx{
-    text-align: center;
-    font-size: 1.4em;
-}.texto{
-    text-align: center;
-    padding-top: 10px;
-    font-size: 3em;
-}
-.modal-overlay {
+
+.sobreposicao-modal {
     display: none;
     position: fixed;
     top: 0;
@@ -171,12 +138,13 @@ cursor: pointer;
     z-index: 1000;
     justify-content: center;
     align-items: center;
-    border: black solid 3px;
 }
-.modal-overlay.active {
+
+.sobreposicao-modal.ativo {
     display: flex;
 }
-.modal-content {
+
+.conteudo-modal {
     width: 23em;
     height: 35em;
     background-color: white;
@@ -185,33 +153,228 @@ cursor: pointer;
     box-shadow: #ffffff75 0px 0px 10px;
     position: relative;
     overflow: hidden;
-    border: black solid 3px;
 }
-footer{
+
+.imagem-modal {
+    background-color: black;
+    height: 50%;
+    background-position: center;
+    position: relative;
+    bottom: 33px;
+    color: white;
+    text-shadow: var(--cor-azul-secundario) 1px 1px 70px;
+}
+
+.modo-classico {
+    background-image: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url(assets/Classico.png);
+}
+
+.modo-infinito {
+    background-image: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url(assets/relogio.png);
+} 
+
+.modo-contra {
+    background-image: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url(assets/espada.png);
+} 
+
+.titulo-modal {
+    text-align: center;
+    padding-top: 10px;
+    font-size: 3em;
+}
+
+.descricao-modal {
+    text-align: center;
+    font-size: 1.4em;
+}
+
+.controles-modal {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    background-color: var(--cor-azul-secundario);
+    width: 100%;
+    height: 100%;
+    position: relative;
+    bottom: 33px;
+}
+
+.controles-modal h1 {
+    position: relative;
+    font-size: 1.5em;
+    right: 6px;
+}
+
+.botao-configuracoes-modal {
+    margin-top: 5px;
+    margin-right: 10px;
+    width: 55px;
+    cursor: pointer;
+    transition: transform 100ms;
+}
+
+.botao-configuracoes-modal:hover {
+    transform: scale(1.10);
+}
+
+.botao-voltar {
+    cursor: pointer;
+    transition: transform 100ms;
+}
+
+.botao-voltar:hover {
+    transform: scale(1.10);
+}
+
+.conteudo-modal-configuracoes {
+    width: 400px;
+    height: 500px;
+    background-color: var(--cor-azul-secundario);
+    border: black solid 4px;
+    border-radius: 10px;
+    box-shadow: #ffffff75 0px 0px 20px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.cabecalho-configuracoes {
+    text-align: center;
+    color: var(--cor-amarelo-primario);
+    margin-bottom: 30px;
+}
+
+.cabecalho-configuracoes h1 {
+    animation: flutuar-vertical 3s infinite;
+    font-size: 2.5em;
+    margin: 0;
+    text-shadow: rgba(0, 0, 0, 0.719) 3px 3px 5px;
+}
+
+.opcoes-configuracoes {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.opcao-som, .opcao-musica {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.opcao-som label, .opcao-musica label {
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.opcao-som input[type="range"], .opcao-musica input[type="range"] {
+    width: 100%;
+    height: 8px;
+    background: var(--cor-cinza-neutro);
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+}
+
+.opcao-som input[type="range"]::-webkit-slider-thumb, 
+.opcao-musica input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: var(--cor-amarelo-primario);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.opcao-som span, .opcao-musica span {
+    color: var(--cor-amarelo-primario);
+    font-size: 1.2em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.botoes-configuracoes {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.botao-config {
+    padding: 15px 30px;
+    font-size: 1.3em;
+    font-family: 'Jersey', 'Courier New', Courier, monospace;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 200ms ease;
+    text-transform: uppercase;
+}
+
+.botao-config:not(.botao-sair) {
+    background-color: var(--cor-amarelo-primario);
+    color: black;
+    border: black solid 2px;
+}
+
+.botao-config:not(.botao-sair):hover {
+    background-color: #e69820;
+    transform: scale(1.05);
+}
+
+.botao-sair {
+    background-color: var(--cor-vermelho-erro);
+    color: black;
+    letter-spacing: 1px;
+    border: black solid 2px;
+}
+
+.botao-sair:hover {
+    background-color: #8b1e2f;
+    transform: scale(1.05);
+}
+
+footer {
     color: white;
     text-align: center;
-    margin-top: 4cap;
+    margin-top: 4em;
 }
+
 @media (max-width: 1117px) {
-main{
-    flex-flow: column nowrap;
-}
-div.g{
-   margin: 1em;
-}
-header{
-    margin-bottom: 1px;
+    main {
+        flex-flow: column nowrap;
+    }
+    
+    .modo-jogo {
+        margin: 1em;
+    }
+    
+    header {
+        margin-bottom: 1px;
+    }
 }
 
 @media (max-width: 613px) {
-.titulo h1{
-    display: block;
-    margin: 1px; 
-}
-header h1{
-    display: none;
-}
+    .titulo-principal h1 {
+        display: block;
+        margin: 1px; 
+    }
     
-}
+    header h1 {
+        display: none;
+    }
+    
+    .conteudo-modal-configuracoes {
+        width: 90vw;
+        height: 80vh;
+        max-width: 350px;
+    }
 }
 
