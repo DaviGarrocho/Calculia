@@ -43,11 +43,13 @@ header{
     margin-right: 2em;
     image-rendering: pixelated;
     transition: 50ms;
+    cursor: pointer;
 }
 #config:hover{
     image-rendering: pixelated;
     transition: 50ms;
     transform: scale(0.95);
+    cursor: pointer;
 }
 header h1{
     animation: flutuar 3s infinite;
@@ -137,12 +139,15 @@ div.g:hover{
 margin-top: 5px;
 margin-right: 10px;
 width: 55px;
+cursor: pointer;
 }
 #confi:hover{
     transform: scale(1.10);
+    cursor: pointer;
 }
 .sair:hover{
     transform: scale(1.10);
+    cursor: pointer;
 }
 #c{background-image: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url(assets/Classico.png);}
 #i{background-image: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url(assets/relogio.png);} 
